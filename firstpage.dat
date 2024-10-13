@@ -1,0 +1,160 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'firstpage_model.dart';
+export 'firstpage_model.dart';
+
+class FirstpageWidget extends StatefulWidget {
+  const FirstpageWidget({super.key});
+
+  @override
+  State<FirstpageWidget> createState() => _FirstpageWidgetState();
+}
+
+class _FirstpageWidgetState extends State<FirstpageWidget> {
+  late FirstpageModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => FirstpageModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFFFFC61A),
+        body: SafeArea(
+          top: true,
+          child: Container(
+            width: 398,
+            height: 756,
+            decoration: BoxDecoration(
+              color: Color(0xFFFFC61A),
+            ),
+            child: Align(
+              alignment: AlignmentDirectional(0, -1),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('signin');
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(10, 10),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Page Title',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Inter Tight',
+                                  color: Colors.white,
+                                  fontSize: 22,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 210,
+                      height: 266,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFFFC61A),
+                      ),
+                      child: Align(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0, 0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        'assets/images/Capture_dcran_2024-09-28_211150.png',
+                                        width: 200,
+                                        height: 150,
+                                        fit: BoxFit.cover,
+                                        alignment: Alignment(0, 0),
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        '\nBienvenu\n',
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .override(
+                                          fontFamily: 'Inter Tight',
+                                          color: Colors.white,
+                                          fontSize: 28,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          shadows: [
+                                            Shadow(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              offset: Offset(2.0, 2.0),
+                                              blurRadius: 2.0,
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ]
+                              .divide(SizedBox(width: 10))
+                              .addToStart(SizedBox(width: 3)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
